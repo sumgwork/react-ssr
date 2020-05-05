@@ -1,7 +1,6 @@
-import axios from "axios";
-
 export const FETCH_USERS = "fetch_users";
 export const FETCH_CURRENT_USER = "fetch_current_user";
+export const FETCH_ADMINS = "fetch_admins";
 
 export const fetchUsers = () => async (dispatch, getState, axiosInstance) => {
   const res = await axiosInstance.get(
@@ -9,6 +8,14 @@ export const fetchUsers = () => async (dispatch, getState, axiosInstance) => {
   );
   dispatch({
     type: FETCH_USERS,
+    payload: res,
+  });
+};
+
+export const fetchAdmins = () => async (dispatch, getState, axiosInstance) => {
+  const res = await axiosInstance.get("/admins");
+  dispatch({
+    type: FETCH_ADMINS,
     payload: res,
   });
 };

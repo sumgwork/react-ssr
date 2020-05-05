@@ -1,5 +1,6 @@
 import HomePage from "./pages/HomePage";
 import UsersListPage from "./pages/UsersListPage";
+import AdminsListPage from "./pages/AdminsListPage";
 import App from "./App";
 import Page404 from "./pages/404";
 
@@ -15,6 +16,10 @@ export default [
       {
         path: "/users",
         ...UsersListPage,
+      },
+      {
+        path: "/admins",
+        ...AdminsListPage,
       },
 
       {
